@@ -8,6 +8,7 @@
       </div>
       <div class="col">
         <h1> {{ name }} </h1>
+
         <h2>PHP DEVELOPER</h2>
         <ul>
           <li>Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="01696462756e73416c60686d2f626e6c">[email&#160;protected]</a></li>
@@ -35,13 +36,26 @@
                {% for job in jobs %}
                  <li class="work-position">
                 <h5>{{ job.title }}</h5>
+                <p>{{job.logo}}</p>
+                <p>{{ ruta }}</p>
                 <p>{{ job.description }}</p>
                 <p>{{ job.months }} </p>
-              </li>
-                {% endfor %}  
+                {% if job.logo %}
+                <img src="../uploads/{{ job.logo }}" alt="" width="80" height="80">
+                 {% endif %}
+                
+                </li>
+               {% endfor %}  
+               
+          
+               
                                   
           </ul>
+      
+          
         </div>
+
+
         <div>
             <h3 class="border-bottom-gray">Projects</h3>
 
@@ -50,8 +64,10 @@
                {% for project in projects %}
                  <li class="work-position">
                 <h5>{{ project.title }}</h5>
+                <p></p>
                 <p>{{ project.description }}</p>
                 <p>{{ project.months }} </p>
+              
               </li>
                 {% endfor %}  
           </ul>
@@ -60,6 +76,7 @@
                 <div class="row">
                     <div class="col-3">
                         <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
+
                       </div>
                       <div class="col">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -92,6 +109,7 @@
         <h4>Backend</h4>
         <ul>
           <li>PHP</li>
+
         </ul>
         <h4>Frontend</h4>
         <ul>

@@ -56,6 +56,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
         // line 10
         echo twig_escape_filter($this->env, ($context["name"] ?? null), "html", null, true);
         echo " </h1>
+
         <h2>PHP DEVELOPER</h2>
         <ul>
           <li>Mail: <a href=\"/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"01696462756e73416c60686d2f626e6c\">[email&#160;protected]</a></li>
@@ -81,66 +82,94 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
           <ul>
             
                ";
-        // line 35
+        // line 36
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["jobs"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["job"]) {
-            // line 36
+            // line 37
             echo "                 <li class=\"work-position\">
                 <h5>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "title", [], "any", false, false, false, 37), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "title", [], "any", false, false, false, 38), "html", null, true);
             echo "</h5>
                 <p>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "description", [], "any", false, false, false, 38), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "logo", [], "any", false, false, false, 39), "html", null, true);
             echo "</p>
                 <p>";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "months", [], "any", false, false, false, 39), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, ($context["ruta"] ?? null), "html", null, true);
+            echo "</p>
+                <p>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "description", [], "any", false, false, false, 41), "html", null, true);
+            echo "</p>
+                <p>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "months", [], "any", false, false, false, 42), "html", null, true);
             echo " </p>
-              </li>
                 ";
+            // line 43
+            if (twig_get_attribute($this->env, $this->source, $context["job"], "logo", [], "any", false, false, false, 43)) {
+                // line 44
+                echo "                <img src=\"../uploads/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["job"], "logo", [], "any", false, false, false, 44), "html", null, true);
+                echo "\" alt=\"\" width=\"80\" height=\"80\">
+                 ";
+            }
+            // line 46
+            echo "                
+                </li>
+               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['job'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 48
         echo "  
+               
+          
+               
                                   
           </ul>
+      
+          
         </div>
+
+
         <div>
             <h3 class=\"border-bottom-gray\">Projects</h3>
 
             <ul>
              
                ";
-        // line 50
+        // line 64
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["projects"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["project"]) {
-            // line 51
+            // line 65
             echo "                 <li class=\"work-position\">
                 <h5>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "title", [], "any", false, false, false, 52), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "title", [], "any", false, false, false, 66), "html", null, true);
             echo "</h5>
+                <p></p>
                 <p>";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "description", [], "any", false, false, false, 53), "html", null, true);
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "description", [], "any", false, false, false, 68), "html", null, true);
             echo "</p>
                 <p>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "months", [], "any", false, false, false, 54), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["project"], "months", [], "any", false, false, false, 69), "html", null, true);
             echo " </p>
+              
               </li>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['project'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 72
         echo "  
           </ul>
             <div class=\"project\">
@@ -148,6 +177,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
                 <div class=\"row\">
                     <div class=\"col-3\">
                         <img id=\"profile-picture\" src=\"https://ui-avatars.com/api/?name=John+Doe&size=255\" alt=\"\">
+
                       </div>
                       <div class=\"col\">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -180,6 +210,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
         <h4>Backend</h4>
         <ul>
           <li>PHP</li>
+
         </ul>
         <h4>Frontend</h4>
         <ul>
@@ -218,7 +249,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
 
     public function getDebugInfo()
     {
-        return array (  144 => 56,  135 => 54,  131 => 53,  127 => 52,  124 => 51,  120 => 50,  109 => 41,  100 => 39,  96 => 38,  92 => 37,  89 => 36,  85 => 35,  57 => 10,  50 => 5,  46 => 4,  35 => 2,);
+        return array (  173 => 72,  163 => 69,  159 => 68,  154 => 66,  151 => 65,  147 => 64,  129 => 48,  121 => 46,  115 => 44,  113 => 43,  109 => 42,  105 => 41,  101 => 40,  97 => 39,  93 => 38,  90 => 37,  86 => 36,  57 => 10,  50 => 5,  46 => 4,  35 => 2,);
     }
 
     public function getSourceContext()
@@ -233,6 +264,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
       </div>
       <div class=\"col\">
         <h1> {{ name }} </h1>
+
         <h2>PHP DEVELOPER</h2>
         <ul>
           <li>Mail: <a href=\"/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"01696462756e73416c60686d2f626e6c\">[email&#160;protected]</a></li>
@@ -260,13 +292,26 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
                {% for job in jobs %}
                  <li class=\"work-position\">
                 <h5>{{ job.title }}</h5>
+                <p>{{job.logo}}</p>
+                <p>{{ ruta }}</p>
                 <p>{{ job.description }}</p>
                 <p>{{ job.months }} </p>
-              </li>
-                {% endfor %}  
+                {% if job.logo %}
+                <img src=\"../uploads/{{ job.logo }}\" alt=\"\" width=\"80\" height=\"80\">
+                 {% endif %}
+                
+                </li>
+               {% endfor %}  
+               
+          
+               
                                   
           </ul>
+      
+          
         </div>
+
+
         <div>
             <h3 class=\"border-bottom-gray\">Projects</h3>
 
@@ -275,8 +320,10 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
                {% for project in projects %}
                  <li class=\"work-position\">
                 <h5>{{ project.title }}</h5>
+                <p></p>
                 <p>{{ project.description }}</p>
                 <p>{{ project.months }} </p>
+              
               </li>
                 {% endfor %}  
           </ul>
@@ -285,6 +332,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
                 <div class=\"row\">
                     <div class=\"col-3\">
                         <img id=\"profile-picture\" src=\"https://ui-avatars.com/api/?name=John+Doe&size=255\" alt=\"\">
+
                       </div>
                       <div class=\"col\">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum corporis at accusamus quisquam hic quos vel? Tenetur, ullam veniam consequatur esse quod cum, quam cupiditate assumenda natus maiores aperiam.</p>
@@ -317,6 +365,7 @@ class __TwigTemplate_cc398b5143c8b7dfa97beac7c0f83215d07ae220879448d6b4ded8215c5
         <h4>Backend</h4>
         <ul>
           <li>PHP</li>
+
         </ul>
         <h4>Frontend</h4>
         <ul>

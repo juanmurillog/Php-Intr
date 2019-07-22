@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* addProject.twig */
-class __TwigTemplate_521ef203299fe1c3473e0768086c79bd177013c90f10a90bc632eaf6231458d5 extends \Twig\Template
+/* addUsers.twig */
+class __TwigTemplate_8e714f2045d0d1c0137c22a56c97192808d158cd86cbb2039b7ce1ef6785816d extends \Twig\Template
 {
     private $source;
     private $macros = [];
@@ -38,7 +38,7 @@ class __TwigTemplate_521ef203299fe1c3473e0768086c79bd177013c90f10a90bc632eaf6231
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("layout.twig", "addProject.twig", 1);
+        $this->parent = $this->loadTemplate("layout.twig", "addUsers.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -47,32 +47,26 @@ class __TwigTemplate_521ef203299fe1c3473e0768086c79bd177013c90f10a90bc632eaf6231
     {
         $macros = $this->macros;
         // line 4
-        echo "    <h1> Add Project </h1>
-    <div class=\"alert alert-primary\" role=\"alert\">
+        echo "  <h1> Add Users </h1>
+  <div class=\"alert alert-primary\" role=\"alert\">
     ";
         // line 6
         echo twig_escape_filter($this->env, ($context["responseMessage"] ?? null), "html", null, true);
         echo "
-    </div>
-    <form action=\"/app/projects/add\" method=\"post\" enctype=\"multipart/form-data\">
-    
-    <label for=\"\">Title:</label>
-    <input type=\"text\" name=\"title\"><br>
-    <label for=\"\"> Description:</label>
-    <input type =\"text\" name=\"description\"><br>
-    <label for=\"\"> Duracion:</label>
-    <input type =\"text\" name=\"months\"><br>
-    <input type= \"file\" name=\"logo\"> <br>
-    <button type=\"submit\">Save</button>
+  </div>
+    <form action=\"/app/users/add\" method=\"post\" enctype=\"multipart/form-data\" >
+    <label for=\"\">Usuario o email:</label>
+    <input type=\"text\" name=\"email\"><br>
+    <label for=\"\"> Password:</label>
+    <input type =\"password\" name=\"password\"><br>   
+    <button type=\"submit\"> Save </button>
     </form>
-
-   
-";
+ ";
     }
 
     public function getTemplateName()
     {
-        return "addProject.twig";
+        return "addUsers.twig";
     }
 
     public function isTraitable()
@@ -90,25 +84,17 @@ class __TwigTemplate_521ef203299fe1c3473e0768086c79bd177013c90f10a90bc632eaf6231
         return new Source("{% extends \"layout.twig\" %}
 
 {% block content %}
-    <h1> Add Project </h1>
-    <div class=\"alert alert-primary\" role=\"alert\">
+  <h1> Add Users </h1>
+  <div class=\"alert alert-primary\" role=\"alert\">
     {{ responseMessage }}
-    </div>
-    <form action=\"/app/projects/add\" method=\"post\" enctype=\"multipart/form-data\">
-    
-    <label for=\"\">Title:</label>
-    <input type=\"text\" name=\"title\"><br>
-    <label for=\"\"> Description:</label>
-    <input type =\"text\" name=\"description\"><br>
-    <label for=\"\"> Duracion:</label>
-    <input type =\"text\" name=\"months\"><br>
-    <input type= \"file\" name=\"logo\"> <br>
-    <button type=\"submit\">Save</button>
+  </div>
+    <form action=\"/app/users/add\" method=\"post\" enctype=\"multipart/form-data\" >
+    <label for=\"\">Usuario o email:</label>
+    <input type=\"text\" name=\"email\"><br>
+    <label for=\"\"> Password:</label>
+    <input type =\"password\" name=\"password\"><br>   
+    <button type=\"submit\"> Save </button>
     </form>
-
-   
-{% endblock %}
-
-", "addProject.twig", "C:\\xampp\\htdocs\\app\\Views\\addProject.twig");
+ {% endblock %}", "addUsers.twig", "C:\\xampp\\htdocs\\app\\Views\\addUsers.twig");
     }
 }

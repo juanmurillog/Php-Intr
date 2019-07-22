@@ -60,6 +60,7 @@ class __TwigTemplate_f3784f645991f4e9701e37a5a1937d74ca011d13b6350980f265cf8b7ab
         $this->displayBlock('content', $context, $blocks);
         // line 22
         echo "  </div>
+   
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -89,7 +90,7 @@ class __TwigTemplate_f3784f645991f4e9701e37a5a1937d74ca011d13b6350980f265cf8b7ab
 
     public function getDebugInfo()
     {
-        return array (  79 => 21,  62 => 22,  60 => 21,  38 => 1,);
+        return array (  80 => 21,  62 => 22,  60 => 21,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -116,6 +117,7 @@ class __TwigTemplate_f3784f645991f4e9701e37a5a1937d74ca011d13b6350980f265cf8b7ab
   <div class=\"container\">
     {% block content %} {% endblock %}
   </div>
+   
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

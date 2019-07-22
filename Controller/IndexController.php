@@ -16,8 +16,9 @@ class IndexController extends BaseController
 
      $name = 'Hector Benitez';
      $limithMonths = 2000;
+     $ruta = "../uploads/3.png";
 
-     return $this->renderHTML('index.twig',['name' => $name, 'jobs' => $jobs, 'projects'=> $projects]);
+     return $this->renderHTML('index.twig',['name' => $name, 'jobs' => $jobs, 'projects'=> $projects , "ruta" => $ruta]);
   
      //include '../Views/index.php';
 

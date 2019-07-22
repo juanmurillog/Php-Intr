@@ -10,7 +10,7 @@ class ProjectsController extends BaseController
    {
 
    	 $responseMessage = null;
-      $postData = $request->getParsedBody();
+     $postData = $request->getParsedBody();
    	$jobValidator = v::key('title', v::stringType()->notEmpty())
                   ->key('description', v::stringType()->notEmpty());
    
@@ -20,16 +20,26 @@ class ProjectsController extends BaseController
 
     $jobValidator->assert($postData);
    	$postData = $request->getParsedBody();
-   	$file = $request->getUploadedFiles()['logo'];
+   	$files = $request->getUploadedFiles();
 
-   	var_dump($file);
-   	/*
+   
+
+   	 $logo = $files['logo'];
+                
+                                 
+     if($logo->getError() == UPLOAD_ERR_OK) {
+      $fileName = $logo->getClientFilename();  
+      $logo->moveTo("../uploads/$fileName");
+      $ruta = "../uploads/".$fileName ;
+     }
+   	
 	$Project = new Project();
     $Project->title = $postData['title'];
     $Project->description = $postData['description'];
     $Project->months = $postData['months'];
+    $Project->logo = $ruta;
     $Project->save();
-    */
+    
     
 
      $responseMessage = 'Saved';

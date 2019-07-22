@@ -7,7 +7,9 @@ error_reporting(E_ALL);
  require_once '../vendor/autoload.php';
  use Illuminate\Database\Capsule\Manager as Capsule;
  use Aura\Router\RouterContainer;
- use Controller\{IndexController,JobsController};
+ 
+
+ session_start();
 
     
 $capsule = new Capsule;
@@ -42,11 +44,13 @@ $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
 $map->get('index', '/app/', [
     'controller' => 'Controller\IndexController',
-    'action' => 'indexAction'
+    'action' => 'indexAction',
+    'auth' => true
 ]);
 $map->get('addJob', '/app/jobs/add', [
     'controller' => 'Controller\JobsController',
-    'action' => 'getAddJobAction'
+    'action' => 'getAddJobAction',
+    'auth' => true
 ]);
 $map->post('saveJobs', '/app/jobs/add', [
     'controller' => 'Controller\JobsController',
@@ -54,35 +58,41 @@ $map->post('saveJobs', '/app/jobs/add', [
 ]);
 $map->get('addProject', '/app/projects/add', [
     'controller' => 'Controller\ProjectsController',
-    'action' => 'getAddProject'
+    'action' => 'getAddProject',
+    'auth' => true
 ]);
 $map->post('saveProject', '/app/projects/add', [
     'controller' => 'Controller\ProjectsController',
     'action' => 'getAddProject'
 ]);
+$map->get('addUsers', '/app/users/add', [
+    'controller' => 'Controller\UsersController',
+    'action' => 'userAction',
+    'auth' => true
+]);
+$map->post('saveUsers', '/app/users/add', [
+    'controller' => 'Controller\UsersController',
+    'action' => 'userAction'
+]);
+$map->get('loginUsers', '/app/login', [
+    'controller' => 'Controller\AuthController',
+    'action' => 'getLogin'
+]);
+$map->post('auth', '/app/auth', [
+    'controller' => 'Controller\AuthController',
+    'action' => 'postLogin'
+]);
+$map->get('logoutUsers', '/app/logout', [
+    'controller' => 'Controller\AuthController',
+    'action' => 'getLogout'
+]);
+$map->get('admin', '/app/admin', [
+    'controller' => 'Controller\AdminController',
+    'action' => 'getIndex',
+    'auth' => true
+]);
 
-function printElement($job)
-   {
 
-   //    if($job->visible == false)
-     // {
-       //         return;
-      //}
-              echo ' <li class="work-position">';
-              echo '<h5> '. $job->title.'</h5>';
-              echo '<p> '. $job->description.'</p>';
-              echo '<p> '.$job->getDuration() .'</p>';
-              echo '<strong>Achievements:</strong>';
-             // echo  '<br>'.$totalMonths;
-              echo '<ul>';
-              echo  '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-              echo  '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-              echo  '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
-              echo'</ul>';
-              echo'</li>';
-              
-
-   }
 
 $matcher = $routerContainer->getMatcher();
 $route = $matcher->match($request);
@@ -99,13 +109,31 @@ else
       $handlerData = $route->handler;
       $controllerName = $handlerData['controller'];
       $actionName = $handlerData['action'];
-   
-             
+      $needsAuth =$handlerData['auth'] ?? false;
+          
+       $sessionUserId = $_SESSION['userId'] ?? null;
+          if($needsAuth && !$sessionUserId)  
+          {
+            $controllerName ='Controller\AuthController';
+            $actionName = 'getLogout';
+          } 
       $controller = new $controllerName;
       $response = $controller->$actionName($request);
 
+    //  var_dump(header(sprintf('%s:%s', $name, $value), false));
+
+       foreach($response->getHeaders() as $name => $values) {
+            # code...
+            foreach($values as $value) {
+                # code...
+                header(sprintf('%s:%s', $name, $value), false);
+            }
+        }
      
+        http_response_code($response->getStatusCode());
+    
         echo $response->getBody();
+      
      
      
 

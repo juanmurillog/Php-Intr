@@ -54,15 +54,16 @@ class __TwigTemplate_32f64a80cc98f4f4e8fee402c6761f334afe81cc94996fa44187d0cf943
         echo twig_escape_filter($this->env, ($context["responseMessage"] ?? null), "html", null, true);
         echo "
   </div>
-    <form action=\"/app/jobs/add\" method=\"post\" enctype=\"multipart/form-data\">
+    <form action=\"/app/jobs/add\" method=\"post\" enctype=\"multipart/form-data\" >
     <label for=\"\">Title:</label>
     <input type=\"text\" name=\"title\"><br>
     <label for=\"\"> Description:</label>
     <input type =\"text\" name=\"description\"><br>
     <label for=\"\"> Duracion:</label>
     <input type =\"text\" name=\"months\"><br>
-    <input type =\"file\" name\"logo\"><br>
-    <button type=\"submit\"> Save</button>
+    <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"100000\" />
+    <input type = \"file\" name= \"logo\" ><br>
+    <button type=\"submit\"> Save </button>
     </form>
  ";
     }
@@ -91,15 +92,16 @@ class __TwigTemplate_32f64a80cc98f4f4e8fee402c6761f334afe81cc94996fa44187d0cf943
   <div class=\"alert alert-primary\" role=\"alert\">
     {{ responseMessage }}
   </div>
-    <form action=\"/app/jobs/add\" method=\"post\" enctype=\"multipart/form-data\">
+    <form action=\"/app/jobs/add\" method=\"post\" enctype=\"multipart/form-data\" >
     <label for=\"\">Title:</label>
     <input type=\"text\" name=\"title\"><br>
     <label for=\"\"> Description:</label>
     <input type =\"text\" name=\"description\"><br>
     <label for=\"\"> Duracion:</label>
     <input type =\"text\" name=\"months\"><br>
-    <input type =\"file\" name\"logo\"><br>
-    <button type=\"submit\"> Save</button>
+    <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"100000\" />
+    <input type = \"file\" name= \"logo\" ><br>
+    <button type=\"submit\"> Save </button>
     </form>
  {% endblock %}
 

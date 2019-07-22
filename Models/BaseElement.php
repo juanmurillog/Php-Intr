@@ -10,6 +10,7 @@
       public $description;
       public $visible= true;
       public $months;
+      public $logo;
 
 
     public function __construct ($title,$description)
@@ -42,6 +43,11 @@
     public function getDescription()
     {
        return $this->description;
+    }
+
+    public function getLogo()
+    {
+      return $this->logo;
     }
 
     }
