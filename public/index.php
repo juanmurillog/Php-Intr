@@ -45,51 +45,51 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 $routerContainer = new RouterContainer();
 
 $map = $routerContainer->getMap();
-$map->get('index', '/app/', [
+$map->get('index', '/', [
     'controller' => 'Controller\IndexController',
     'action' => 'indexAction',
     'auth' => true
 ]);
-$map->get('addJob', '/app/jobs/add', [
+$map->get('addJob', '/jobs/add', [
     'controller' => 'Controller\JobsController',
     'action' => 'getAddJobAction',
     'auth' => true
 ]);
-$map->post('saveJobs', '/app/jobs/add', [
+$map->post('saveJobs', '/jobs/add', [
     'controller' => 'Controller\JobsController',
     'action' => 'getAddJobAction'
 ]);
-$map->get('addProject', '/app/projects/add', [
+$map->get('addProject', '/projects/add', [
     'controller' => 'Controller\ProjectsController',
     'action' => 'getAddProject',
     'auth' => true
 ]);
-$map->post('saveProject', '/app/projects/add', [
+$map->post('saveProject', '/projects/add', [
     'controller' => 'Controller\ProjectsController',
     'action' => 'getAddProject'
 ]);
-$map->get('addUsers', '/app/users/add', [
+$map->get('addUsers', '/users/add', [
     'controller' => 'Controller\UsersController',
     'action' => 'userAction',
     'auth' => true
 ]);
-$map->post('saveUsers', '/app/users/add', [
+$map->post('saveUsers', '/users/add', [
     'controller' => 'Controller\UsersController',
     'action' => 'userAction'
 ]);
-$map->get('loginUsers', '/app/login', [
+$map->get('loginUsers', '/login', [
     'controller' => 'Controller\AuthController',
     'action' => 'getLogin'
 ]);
-$map->post('auth', '/app/auth', [
+$map->post('auth', '/auth', [
     'controller' => 'Controller\AuthController',
     'action' => 'postLogin'
 ]);
-$map->get('logoutUsers', '/app/logout', [
+$map->get('logoutUsers', '/logout', [
     'controller' => 'Controller\AuthController',
     'action' => 'getLogout'
 ]);
-$map->get('admin', '/app/admin', [
+$map->get('admin', '/admin', [
     'controller' => 'Controller\AdminController',
     'action' => 'getIndex',
     'auth' => true

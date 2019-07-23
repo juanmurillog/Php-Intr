@@ -49,13 +49,15 @@ class __TwigTemplate_ef79cb6c01a91081e7bb598f791f468bf58346907c89e80138399414af2
         // line 5
         echo "<h1> Dashboard</h1>
 <ul>
-   <li><a href=\"/app/users/add\">Add user</a> </li>
-   <li><a href=\"/app/jobs/add\">Add jobs </a>  </li>
-   <li><a href=\"/app/projects/add\"> Add projects</a></li>
+   <li><a href=\"/users/add\">Add user</a> </li>
+   <li><a href=\"/jobs/add\">Add jobs </a>  </li>
+   <li><a href=\"/projects/add\"> Add projects</a></li>
+   <li><a href=\"/\"> INDEX</a></li>
+
 </ul>
 
 
-<a href=\"/app/logout\">Logout</a>
+<a href=\"/logout\">Logout</a>
 ";
     }
 
@@ -82,13 +84,15 @@ class __TwigTemplate_ef79cb6c01a91081e7bb598f791f468bf58346907c89e80138399414af2
  {% block content %}
 <h1> Dashboard</h1>
 <ul>
-   <li><a href=\"/app/users/add\">Add user</a> </li>
-   <li><a href=\"/app/jobs/add\">Add jobs </a>  </li>
-   <li><a href=\"/app/projects/add\"> Add projects</a></li>
+   <li><a href=\"/users/add\">Add user</a> </li>
+   <li><a href=\"/jobs/add\">Add jobs </a>  </li>
+   <li><a href=\"/projects/add\"> Add projects</a></li>
+   <li><a href=\"/\"> INDEX</a></li>
+
 </ul>
 
 
-<a href=\"/app/logout\">Logout</a>
+<a href=\"/logout\">Logout</a>
 {% endblock %}", "admin.twig", "C:\\xampp\\htdocs\\app\\Views\\admin.twig");
     }
 }

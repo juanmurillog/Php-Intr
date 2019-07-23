@@ -10,7 +10,7 @@
 	 	}
 	 },
 	"require" :{
-		"php": "^7.2.0",
+		
 	 	 "illuminate/database": "^5.8",
 	 	 "zendframework/zend-diactoros": "^2.1",
 	 	 "aura/router": "^3.1",

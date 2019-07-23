@@ -54,7 +54,7 @@ class __TwigTemplate_32cf7a343600671fa4b847cd456346ca143a60d87cdf60f81ba81b00a99
         echo twig_escape_filter($this->env, ($context["responseMessage"] ?? null), "html", null, true);
         echo "
   </div>
-    <form action=\"/app/auth\" method=\"post\" enctype=\"multipart/form-data\" >
+    <form action=\"/auth\" method=\"post\" enctype=\"multipart/form-data\" >
     
     <input type=\"text\" name=\"email\" placeholder=\"Email\"><br>
     <input type =\"password\" name=\"password\" placeholder=\"Password\"><br>   
@@ -87,7 +87,7 @@ class __TwigTemplate_32cf7a343600671fa4b847cd456346ca143a60d87cdf60f81ba81b00a99
    <div class=\"alert alert-primary\" role=\"alert\">
     {{ responseMessage }}
   </div>
-    <form action=\"/app/auth\" method=\"post\" enctype=\"multipart/form-data\" >
+    <form action=\"/auth\" method=\"post\" enctype=\"multipart/form-data\" >
     
     <input type=\"text\" name=\"email\" placeholder=\"Email\"><br>
     <input type =\"password\" name=\"password\" placeholder=\"Password\"><br>   

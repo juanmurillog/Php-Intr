@@ -25,6 +25,10 @@ class ComposerStaticInit53fc473edad3b7ec1f10ab8e791f40e6
         array (
             'Zend\\Diactoros\\' => 15,
         ),
+        'V' => 
+        array (
+            'Views\\' => 6,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -78,6 +82,10 @@ class ComposerStaticInit53fc473edad3b7ec1f10ab8e791f40e6
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
+        'Views\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Views',
         ),
         'Twig\\' => 
         array (

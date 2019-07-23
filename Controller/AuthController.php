@@ -24,7 +24,7 @@ class AuthController extends BaseController {
 
       	   	$_SESSION['userId']= $user->id;
 
-      		return new RedirectResponse('/app/admin');
+      		return new RedirectResponse('/admin');
       	  } else{
       	  	  $responseMessage= 'Bad credentials';
       	  }
@@ -40,8 +40,7 @@ class AuthController extends BaseController {
    {
 
       	    unset($_SESSION['userId']);
-            $responseMessage = 'Debe autenticarse para acceder a esa pagina';
-      		return new RedirectResponse('/app/login');
+      		return new RedirectResponse('/login');
    }
 
 

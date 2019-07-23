@@ -11,7 +11,7 @@
 
  	 public function __construct()
  	 {
- 	 	$loader = new \Twig\Loader\FilesystemLoader('../views');
+ 	 	$loader = new \Twig\Loader\FilesystemLoader('../Views');
  	 	$this->templateEngine = new \Twig\Environment($loader, [
  	     'debug' => 'true',
          'cache' => 'false']);
