@@ -4,10 +4,13 @@
 	 	"psr-4":
 	 	{
 	 		"Models\\": "Models/",
-	 		"Controller\\": "Controller/"
+	 		"Controller\\": "Controller/",
+	 		"Views\\": "Views/"
+
 	 	}
 	 },
 	"require" :{
+		"php": "^7.2.0",
 	 	 "illuminate/database": "^5.8",
 	 	 "zendframework/zend-diactoros": "^2.1",
 	 	 "aura/router": "^3.1",
